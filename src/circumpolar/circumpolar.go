@@ -12,23 +12,12 @@ import (
 	"github.com/loraxipam/havers2"
 )
 
-// jpair is an overloaded havers2.Coord object used displaying JSON
+// jpair is an overloaded havers2.Coord object used for displaying JSON
 type jpair struct {
 	Coord havers2.Coord `json:"coord,omitempty"`
 	Dist  float64       `json:"distance"`
 	Head  float64       `json:"heading,omitempty"`
 	Index int           `json:"index"`
-}
-
-// find returns the smallest index i at which x == a[i],
-// or len(a) if there is no such index.
-func find(a []string, x string) int {
-	for i, n := range a {
-		if x == n {
-			return i
-		}
-	}
-	return len(a)
 }
 
 // makePairs turns the command line arguments into an array of coordinates
@@ -84,7 +73,7 @@ func printPairs(pairs []havers2.Coord, r float64, u string, outputJSON bool) {
 
 		j, err := json.Marshal(jpairs)
 		if err != nil {
-			fmt.Errorf("Cannot marshal")
+			err = fmt.Errorf("Cannot marshal")
 		}
 		fmt.Printf(string(j))
 	} else {
@@ -134,6 +123,12 @@ func main() {
 		if !contains(os.Args, "-radius") {
 			radius = havers2.EarthRadiusMi
 		}
+	}
+
+	// Did they pass ANYTHING?
+	if len(flag.Args()) < 2 {
+		flag.Usage()
+		os.Exit(1)
 	}
 
 	// Create lat/lon pairs
