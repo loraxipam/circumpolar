@@ -37,7 +37,7 @@
 
    Notice that the ```-radius``` flag doesn't really affect the kilo/mile flags. You can pass just a radius and the output will be _labeled_ as the default "NM" but that's really moot when the radius is overridden -- all output is relative to the value that was passed in. If you want distances reported in _The Register_ Vulture Central-approved standard ```linguine```s, then just pass the Earth's radius as 45,506,300 and only you will know that the "NM" label really means "lg" and not nautical miles.
 
-   The ```-kilo``` and ```-mile``` flags _do_ affect the radius **when used alone**, though, because they will assign the radius to the Earth's value for the chosen unit. When you use a ```-radius``` value with these, you'll simply get the "km" and "mi" labels and calculations will use the passed-in radius.
+   The ```-kilo``` and ```-mile``` flags _do_ affect the radius **when used alone**, though, because they will assign the radius to the Earth's value for the chosen unit. But understand that when you use a ```-radius``` value with these, you'll simply get the "km" and "mi" labels and calculations will use the passed-in radius.
 
 ## Next
 

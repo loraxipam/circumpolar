@@ -13,30 +13,37 @@ FIJI="-18.14 178.44"
 MIA="25.77 -80.2"
 LAX="34.05 -118.25"
 NYC="40.75 -73.9"
+BAD="140.75 -873.9"
 
-# -kilo
-echo kilo
-go run circumpolar.go -kilo $TIKI \
-	$FIJI	$MIA	$LAX	$NYC
+CMD='circumpolar'
+[[ -f circumpolar.go ]] && CMD='go run circumpolar.go'
+
+# none
+$CMD
+
+# default
+echo default
+$CMD $TIKI \
+	$FIJI	$MIA	$LAX	$NYC	$BAD
 
 # -mile
 echo mile
-go run circumpolar.go -mile $TIKI \
-	$FIJI	$MIA	$LAX	$NYC
+$CMD -mile $TIKI \
+	$FIJI	$MIA	$LAX	$NYC	$BAD
+
+# -kilo
+echo kilo
+$CMD -kilo $TIKI \
+	$FIJI	$MIA	$LAX	$NYC	$BAD
 
 # Mars
 echo mars
-go run circumpolar.go -kilo -radius 3390 $TIKI \
-	$FIJI	$MIA	$LAX	$NYC
-
-# -json
-echo json
-go run circumpolar.go -json $TIKI \
-	$FIJI	$MIA	$LAX	$NYC
-echo ""
+$CMD -kilo -radius 3390 $TIKI \
+	$FIJI	$MIA	$LAX	$NYC	$BAD
 
 # Mars -json
 echo mars json
-go run circumpolar.go -json -kilo -radius 3390 $TIKI \
-	$FIJI	$MIA	$LAX	$NYC
+$CMD -json -kilo -radius 3390 $TIKI \
+	$FIJI	$MIA	$LAX	$NYC	$BAD
 echo ""
+
