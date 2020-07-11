@@ -122,6 +122,8 @@ func main() {
 
 	// Did they pass ANYTHING?
 	if len(flag.Args()) < 2 {
+		fmt.Println("\ncircumpolar latA lonA latX lonX [latY lonY latZ lonZ...]")
+		fmt.Println("    where lat/lon values are decimal with negative S and W values\n")
 		flag.Usage()
 		os.Exit(1)
 	}
