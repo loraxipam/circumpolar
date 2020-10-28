@@ -26,11 +26,14 @@
    ```circumpolar -json -- -1.28 36.82 51.45 -1.15``` would produce the same Nairobi/Oxford results
    but would return JSON instead of rows.
 
+   NOAA provides magnetic declination queries for given points, so now results also show compass position with declination included.
+
 ## Options
 
    * ```-json``` - output results in JSON format
    * ```-kilo``` - output result distances in kilometers
    * ```-mile``` - output result distances in statute miles
+   * ```-home``` - Stay home. Do not query NOAA for magnetic declination.
    * ```-radius N``` - use N as the sphere's radius rather than the Earth's
 
    If no distance flags are provided, the default distance unit is the nautical mile and calculations use the Earth's radius.
@@ -44,3 +47,4 @@
    - ~~Output JSON~~
    - Parse d.m.s format and NSEW designators
    - Provide distance to lat/lon lines
+   - ~~Magnetic declination~~
