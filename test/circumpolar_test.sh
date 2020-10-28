@@ -26,6 +26,11 @@ echo default
 $CMD $TIKI \
 	$FIJI	$MIA	$LAX	$NYC	$BAD
 
+# No NOAA
+echo home
+$CMD -home $TIKI \
+	$FIJI	$MIA	$LAX	$NYC	$BAD
+
 # -mile
 echo mile
 $CMD -mile $TIKI \
@@ -35,6 +40,11 @@ $CMD -mile $TIKI \
 echo kilo
 $CMD -kilo $TIKI \
 	$FIJI	$MIA	$LAX	$NYC	$BAD
+
+# Southern hemisphere
+echo Southern hemisphere
+$CMD -- $FIJI \
+	$TIKI	$MIA	$LAX	$NYC	$BAD
 
 # Mars
 echo mars
