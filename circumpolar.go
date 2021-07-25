@@ -182,7 +182,7 @@ func main() {
 	flag.BoolVar(&outputJSON, "json", false, "Output results as JSON")
 	flag.BoolVar(&kilo, "kilo", false, "Output station distances in kilometers")
 	flag.BoolVar(&mile, "mile", false, "Output station distances in statue miles")
-	flag.BoolVar(&home, "home", false, "Stay home. Don't query NOAA for declination")
+	flag.BoolVar(&home, "home", false, "Stay home. Don't query NOAA for magnetic declination")
 	flag.Float64Var(&radius, "radius", havers2.EarthRadiusNM, "Assign the sphere's radius to this value instead of Earth's nautical miles")
 	flag.Parse()
 
